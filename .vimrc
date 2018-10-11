@@ -4,10 +4,13 @@ filetype off "allow pathogen to detect filetypes
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'gmarik/vundle'
 
+Plugin 'gmarik/vundle'
 "bundles here:
+Plugin 'mileszs/ack.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'guns/vim-clojure-static'
+Plugin 'guns/vim-clojure-highlight'
 Plugin 'tpope/vim-fireplace'
 Plugin 'tpope/vim-classpath'
 Plugin 'scrooloose/nerdtree'
@@ -16,14 +19,11 @@ Plugin 'guns/vim-sexp'
 Plugin 'tpope/vim-sexp-mappings-for-regular-people'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'venantius/vim-cljfmt'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
+let g:ackprg = '/usr/local/Cellar/ack/2.22/bin/ack'
 call vundle#end()
-"Turn on rainbow everything
-au VimEnter * RainbowParenthesesActivate
-au VimEnter * RainbowParenthesesLoadRound
-au VimEnter * RainbowParenthesesLoadSquare
-au VimEnter * RainbowParenthesesLoadBraces
-
 syntax on
 filetype on
 filetype plugin indent on
@@ -42,6 +42,7 @@ set gfn=Anonymous\ Pro
 set number
 set foldmethod=indent
 set foldlevel=99
+set backspace=indent,eol,start " backspace over everything in insert mode
 
 "specify jshintrc location
 let g:syntastic_javascript_jshint_conf="~/.jshintrc"
@@ -89,6 +90,14 @@ map <F7> mzgg=G`z<CR>
 
 " strip trailing whitepsace on save. The * is file match pattern.
 autocmd BufWritePre * :%s/\s\+$//e
-
+autocmd BufEnter * :syntax sync fromstart
 " cljfmt settings
-let g:clj_fmt_autosave = 1
+let g:clj_fmt_autosave = 0
+"Turn on rainbow everything
+au VimEnter * RainbowParenthesesActivate
+au VimEnter * RainbowParenthesesLoadRound
+au VimEnter * RainbowParenthesesLoadSquare
+au VimEnter * RainbowParenthesesLoadBraces
+au VimEnter * RainbowParenthesesToggle
+
+
