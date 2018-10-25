@@ -4,7 +4,6 @@ filetype off "allow pathogen to detect filetypes
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-
 Plugin 'gmarik/vundle'
 "bundles here:
 Plugin 'mileszs/ack.vim'
@@ -13,6 +12,7 @@ Plugin 'guns/vim-clojure-static'
 Plugin 'guns/vim-clojure-highlight'
 Plugin 'tpope/vim-fireplace'
 Plugin 'tpope/vim-classpath'
+Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'guns/vim-sexp'
@@ -21,8 +21,10 @@ Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'venantius/vim-cljfmt'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'evansalter/vim-checklist'
 
 let g:ackprg = '/usr/local/Cellar/ack/2.22/bin/ack'
+let g:airline_theme='base16_pop'
 call vundle#end()
 syntax on
 filetype on
@@ -63,6 +65,14 @@ map <c-h> <c-w>h
 nnoremap j gj
 nnoremap k gk
 
+"checklist plugin bindings
+nnoremap <leader>ct :ChecklistToggleCheckbox<cr>
+nnoremap <leader>ce :ChecklistEnableCheckbox<cr>
+nnoremap <leader>cd :ChecklistDisableCheckbox<cr>
+vnoremap <leader>ct :ChecklistToggleCheckbox<cr>
+vnoremap <leader>ce :ChecklistEnableCheckbox<cr>
+vnoremap <leader>cd :ChecklistDisableCheckbox<cr>
+
 "toggle NERDTree with control-e
 nnoremap <C-e> :NERDTreeToggle<CR>
 
@@ -94,10 +104,13 @@ autocmd BufEnter * :syntax sync fromstart
 " cljfmt settings
 let g:clj_fmt_autosave = 0
 "Turn on rainbow everything
-au VimEnter * RainbowParenthesesActivate
-au VimEnter * RainbowParenthesesLoadRound
-au VimEnter * RainbowParenthesesLoadSquare
-au VimEnter * RainbowParenthesesLoadBraces
+"au VimEnter * RainbowParenthesesActivate
+"au VimEnter * RainbowParenthesesLoadRound
+"au VimEnter * RainbowParenthesesLoadSquare
+"au VimEnter * RainbowParenthesesLoadBraces
+"au VimEnter * RainbowParenthesesToggle
+
 au VimEnter * RainbowParenthesesToggle
-
-
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
