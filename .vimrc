@@ -6,6 +6,9 @@ call vundle#begin()
 
 Plugin 'gmarik/vundle'
 "bundles here:
+Plugin 'metakirby5/codi.vim'
+Plugin 'dense-analysis/ale'
+Plugin 'gberenfield/cljfold.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'guns/vim-clojure-static'
@@ -22,6 +25,25 @@ Plugin 'venantius/vim-cljfmt'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'evansalter/vim-checklist'
+
+let g:ale_linters = {'clojure': ['clj-kondo']}
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
 
 let g:ackprg = '/usr/local/Cellar/ack/2.22/bin/ack'
 let g:airline_theme='base16_pop'
@@ -54,6 +76,8 @@ let g:syntastic_javascript_jscs_args = "-c ~/.jscsrc"
 
 "enable both JS checkers
 let g:syntastic_javascript_checkers = ['jshint', 'jscs']
+
+let g:clojure_foldwords = "def,defn,ns"
 
 "window keybindings
 map <c-j> <c-w>j
