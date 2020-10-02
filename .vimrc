@@ -120,6 +120,10 @@ autocmd BufEnter * :syntax sync fromstart
 " cljfmt settings
 let g:clj_fmt_autosave = 0
 
+colorscheme desert
+highlight Directory ctermfg=cyan
+hi Comment ctermfg=LightBlue
+
 "Turn on rainbow everything
 "au VimEnter * RainbowParenthesesActivate
 au VimEnter * RainbowParenthesesToggle
