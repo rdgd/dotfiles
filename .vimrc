@@ -6,10 +6,10 @@ call vundle#begin()
 
 Plugin 'gmarik/vundle'
 "bundles here:
-Plugin 'metakirby5/codi.vim'
-Plugin 'dense-analysis/ale'
-Plugin 'gberenfield/cljfold.vim'
 Plugin 'mileszs/ack.vim'
+Plugin 'dense-analysis/ale'
+Plugin 'metakirby5/codi.vim'
+Plugin 'gberenfield/cljfold.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'guns/vim-clojure-static'
 Plugin 'guns/vim-clojure-highlight'
@@ -26,7 +26,10 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'evansalter/vim-checklist'
 
+call vundle#end()
+
 let g:ale_linters = {'clojure': ['clj-kondo']}
+
 let g:rbpt_colorpairs = [
     \ ['brown',       'RoyalBlue3'],
     \ ['Darkblue',    'SeaGreen3'],
@@ -45,9 +48,8 @@ let g:rbpt_colorpairs = [
     \ ['red',         'firebrick3'],
     \ ]
 
-let g:ackprg = '/usr/local/Cellar/ack/2.22/bin/ack'
 let g:airline_theme='base16_pop'
-call vundle#end()
+
 syntax on
 filetype on
 filetype plugin indent on
@@ -68,15 +70,9 @@ set foldmethod=indent
 set foldlevel=99
 set backspace=indent,eol,start " backspace over everything in insert mode
 
-"specify jshintrc location
 let g:syntastic_javascript_jshint_conf="~/.jshintrc"
-
-"specify jscsrc location
 let g:syntastic_javascript_jscs_args = "-c ~/.jscsrc"
-
-"enable both JS checkers
 let g:syntastic_javascript_checkers = ['jshint', 'jscs']
-
 let g:clojure_foldwords = "def,defn,ns"
 
 "window keybindings
@@ -112,10 +108,6 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
-
-" bind K to grep word under cursor
-nnoremap <A-K> :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-
 "keybindings for ctrlP
 let g:ctrlp_map = '<c-p>'
 
@@ -127,14 +119,17 @@ autocmd BufWritePre * :%s/\s\+$//e
 autocmd BufEnter * :syntax sync fromstart
 " cljfmt settings
 let g:clj_fmt_autosave = 0
+
 "Turn on rainbow everything
 "au VimEnter * RainbowParenthesesActivate
-"au VimEnter * RainbowParenthesesLoadRound
-"au VimEnter * RainbowParenthesesLoadSquare
-"au VimEnter * RainbowParenthesesLoadBraces
-"au VimEnter * RainbowParenthesesToggle
-
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+set completeopt=longest,menuone
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
