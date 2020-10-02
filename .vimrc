@@ -1,5 +1,4 @@
 set nocompatible
-filetype off "allow pathogen to detect filetypes
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -25,6 +24,11 @@ Plugin 'venantius/vim-cljfmt'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'evansalter/vim-checklist'
+"Requires a nerd-font to be installed on machine...
+"See: https://github.com/ryanoasis/nerd-fonts
+"Install then set as terminal font
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 call vundle#end()
 
@@ -49,7 +53,7 @@ let g:rbpt_colorpairs = [
     \ ]
 
 let g:airline_theme='base16_pop'
-
+set encoding=UTF-8
 syntax on
 filetype on
 filetype plugin indent on
