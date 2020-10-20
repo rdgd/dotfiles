@@ -29,6 +29,7 @@ Plugin 'evansalter/vim-checklist'
 "Install then set as terminal font
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plugin 'junegunn/goyo.vim'
 
 call vundle#end()
 
