@@ -1,0 +1,15 @@
+{:aliases {:jar  {:extra-deps  {seancorfield/depstar  {:mvn/version  "RELEASE"}}
+                  :main-opts  ["-m"  "hf.depstar.jar"]}
+           :install  {:extra-deps  {deps-deploy  {:mvn/version  "RELEASE"}}
+                      :main-opts  ["-m"  "deps-deploy/deps-deploy.deps-deploy"  "install"]}
+           :deploy  {:extra-deps  {deps-deploy  {:mvn/version  "RELEASE"}}
+                     :main-opts  ["-m"  "deps-deploy/deps-deploy.deps-deploy"  "deploy"]}
+           :repl {:extra-deps {org.clojure/clojure {:mvn/version "1.10.1"}
+                               cider/cider-nrepl {:mvn/version "0.25.3"}}
+                  :main-opts ["-m" "nrepl.cmdline" "--middleware" "[cider.nrepl/cider-middleware]"]}
+           :repljs {:extra-deps {org.clojure/clojure {:mvn/version "1.10.1"}
+                                 org.clojure/clojurescript {:mvn/version "1.10.339"}
+                                 cider/cider-nrepl {:mvn/version "0.25.3"}
+                                 cider/piggieback {:mvn/version "0.4.1"}}
+                    :main-opts ["-m" "nrepl.cmdline" "--middleware"
+                                "[cider.nrepl/cider-middleware,cider.piggieback/wrap-cljs-repl]"]}}}
