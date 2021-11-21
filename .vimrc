@@ -1,37 +1,36 @@
 set nocompatible
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+"set rtp+=~/.vim/bundle/Vundle.vim
+call plug#begin('~/.vim/plugged')
 
-Plugin 'gmarik/vundle'
-"bundles here:
-Plugin 'mileszs/ack.vim'
-Plugin 'dense-analysis/ale'
-Plugin 'metakirby5/codi.vim'
-Plugin 'gberenfield/cljfold.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'guns/vim-clojure-static'
-Plugin 'guns/vim-clojure-highlight'
-Plugin 'tpope/vim-fireplace'
-Plugin 'tpope/vim-classpath'
-Plugin 'tpope/vim-surround'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'guns/vim-sexp'
-Plugin 'tpope/vim-sexp-mappings-for-regular-people'
-Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'venantius/vim-cljfmt'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'evansalter/vim-checklist'
+Plug 'gmarik/vundle'
+Plug 'mileszs/ack.vim'
+Plug 'dense-analysis/ale'
+Plug 'metakirby5/codi.vim'
+Plug 'gberenfield/cljfold.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'guns/vim-clojure-static'
+Plug 'guns/vim-clojure-highlight'
+Plug 'tpope/vim-fireplace'
+Plug 'tpope/vim-classpath'
+Plug 'tpope/vim-surround'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'guns/vim-sexp'
+Plug 'tpope/vim-sexp-mappings-for-regular-people'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'venantius/vim-cljfmt'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'evansalter/vim-checklist'
 "Requires a nerd-font to be installed on machine...
 "See: https://github.com/ryanoasis/nerd-fonts
 "Install then set as terminal font
-Plugin 'ryanoasis/vim-devicons'
-Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plugin 'junegunn/goyo.vim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'junegunn/goyo.vim'
 
-call vundle#end()
+call plug#end()
 
 let g:ale_linters = {'clojure': ['clj-kondo']}
 

@@ -1,6 +1,6 @@
 # PREREQUISITES
-# ssh-keygen -t rsa
-# add key to github
+# `ssh-keygen -t rsa`
+# add pubkey to github
 # END
 
 cd ~
@@ -30,6 +30,13 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 #INSTALL AWS CLI
 sudo apt install awscli -y
 aws configure
+
+#INSTALL SAML2AWS
+CURRENT_VERSION=$(curl -Ls https://api.github.com/repos/Versent/saml2aws/releases/latest | grep 'tag_name' | cut -d'v' -f2 | cut -d'"' -f1)
+wget -c https://github.com/Versent/saml2aws/releases/download/v${CURRENT_VERSION}/saml2aws_${CURRENT_VERSION}_linux_amd64.tar.gz -O - | tar -xzv -C ~/.local/bin
+chmod u+x ~/.local/bin/saml2aws
+hash -r
+saml2aws --version
 
 #INSTALL JAVA
 sudo apt install openjdk-11-jdk
@@ -74,3 +81,6 @@ sudo apt-get install -y kubectl
 
 #GENERATE KUBECONFIG
 aws eks --region us-east-2 update-kubeconfig --name k8s-prod-cluster
+
+#CHANGE SHELL TO ZSH
+chsh -s $(which zsh)

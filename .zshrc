@@ -19,3 +19,4 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 export EDITOR='vim'
 set -o vi
+eval "$(saml2aws --completion-script-zsh)"
