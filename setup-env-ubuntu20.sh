@@ -16,10 +16,9 @@ git config --global user.email "rdgd"
 
 #DOTFILES
 git clone git@github.com:rdgd/dotfiles.git
-cp dotfiles/.bashrc .
 cp dotfiles/.vimrc .
 cp dotfiles/.tmuxrc .
-cp dotfiles/.zshrc .
+cp dotfiles/.zshrc-tmpl .zshrc
 
 #INSTALL OHMYZSH
 sudo apt install zsh -y
@@ -50,18 +49,17 @@ sudo ./linux-install-1.10.3.1029.sh
 
 #INSTALL NVM/NODEJS
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-echo "which nvm start"
-echo "$(which nvm)"
-echo "which nvm end"
-source ~/.bashrc
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 nvm install --lts
 npm install -g yarn
 
 #INSTALL GO AND GVM
-#apt-get install golang -y
-#curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer | bash
-#gvm install go1.16.8
-#gvm use go1.16.8
+sudo apt-get install golang -y
+curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer | bash
+gvm install go1.16.8
+gvm use go1.16.8
 
 #INSTALL AVALANCHE TOOLS
 curl https://downloads.avax.network/avalanchego.gpg.key > avatmpkey.gpg.key
