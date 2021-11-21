@@ -54,8 +54,8 @@ echo "which nvm start"
 echo "$(which nvm)"
 echo "which nvm end"
 source ~/.bashrc
-(nvm install --lts)
-(npm install -g yarn)
+nvm install --lts
+npm install -g yarn
 
 #INSTALL GO AND GVM
 #apt-get install golang -y
