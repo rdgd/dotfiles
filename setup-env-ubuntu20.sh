@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # PREREQUISITES
 # `ssh-keygen -t rsa`
 # add pubkey to github
@@ -48,21 +50,22 @@ sudo ./linux-install-1.10.3.1029.sh
 
 #INSTALL NVM/NODEJS
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+echo "which nvm start"
+echo "$(which nvm)"
+echo "which nvm end"
 source ~/.bashrc
-nvm install --lts
-npm install -g yarn
+(nvm install --lts)
+(npm install -g yarn)
 
 #INSTALL GO AND GVM
-apt-get install golang -y
-curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer | bash
-gvm install go1.16.8
-gvm use go1.16.8
+#apt-get install golang -y
+#curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer | bash
+#gvm install go1.16.8
+#gvm use go1.16.8
 
 #INSTALL AVALANCHE TOOLS
-sudo su -
-wget -O - https://downloads.avax.network/avalanchego.gpg.key | apt-key add -
-echo "deb https://downloads.avax.network/apt focal main" > /etc/apt/sources.list.d/avalanche.list
-exit
+curl https://downloads.avax.network/avalanchego.gpg.key > avatmpkey.gpg.key
+(exec sudo su -c "apt-key add avatmpkey.gpg.key && echo \"deb https://downloads.avax.network/apt focal main\" > /etc/apt/sources.list.d/avalanche.list")
 
 sudo apt update
 sudo apt install avalanchego -y
