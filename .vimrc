@@ -33,6 +33,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'liquidz/vim-iced', {'for': 'clojure'}
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
+Plug 'TovarishFin/vim-solidity'
 
 call plug#end()
 
