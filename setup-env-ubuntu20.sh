@@ -10,6 +10,11 @@ cd ~
 sudo apt update
 sudo apt upgrade
 
+#UTILITIES
+sudo apt install bat
+mkdir -p ~/.local/bin
+ln -s /usr/bin/batcat ~/.local/bin/bat
+
 #GITCONFIG
 git config --global user.email "ryan.is.gray@gmail.com"
 git config --global user.email "rdgd"
@@ -39,6 +44,12 @@ chmod u+x ~/.local/bin/saml2aws
 hash -r
 saml2aws --version
 
+#INSTALL TERRAFORM
+sudo apt-get update && sudo apt-get install -y gnupg software-properties-common curl
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+sudo apt-get update && sudo apt-get install terraform -y
+
 #INSTALL JAVA
 sudo apt install openjdk-11-jdk
 
@@ -55,9 +66,14 @@ export NVM_DIR="$HOME/.nvm"
 nvm install --lts
 npm install -g yarn
 
+#INSTALL BAZELISK
+npm install -g @bazel/bazelisk
+
 #INSTALL GO AND GVM
 sudo apt-get install golang -y
 curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer | bash
+[[ -s "/home/ryan/.gvm/scripts/gvm" ]] && source "/home/ryan/.gvm/scripts/gvm"
+export GOPATH=~/go
 gvm install go1.16.8
 gvm use go1.16.8
 
