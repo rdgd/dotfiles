@@ -1,6 +1,7 @@
 set nocompatible
 
-"set rtp+=~/.vim/bundle/Vundle.vim
+let mapleader = " "
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'gmarik/vundle'
@@ -57,6 +58,7 @@ let g:rbpt_colorpairs = [
     \ ]
 
 let g:airline_theme='base16_pop'
+set guifont=Hasklung\ Nerd\ Font\ 11
 set encoding=UTF-8
 syntax on
 filetype on
@@ -145,3 +147,5 @@ set completeopt=longest,menuone
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
   \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
+hi Pmenu ctermfg=grey ctermbg=black
