@@ -29,9 +29,13 @@ Plug 'evansalter/vim-checklist'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'junegunn/goyo.vim'
+Plug 'liquidz/vim-iced', {'for': 'clojure'}
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
 
 call plug#end()
 
+let g:iced_enable_default_key_mappings = v:true
 let g:ale_linters = {'clojure': ['clj-kondo']}
 
 let g:rbpt_colorpairs = [
