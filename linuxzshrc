@@ -1,3 +1,4 @@
 
+[[ -s "/home/ryan/.gvm/scripts/gvm" ]] && source "/home/ryan/.gvm/scripts/gvm"
 export ZSH="/home/ryan/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
