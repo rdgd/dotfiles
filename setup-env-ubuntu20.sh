@@ -24,8 +24,10 @@ git config --global user.name "rdgd"
 #DOTFILES
 git clone git@github.com:rdgd/dotfiles.git
 cp dotfiles/.vimrc .
-cp dotfiles/.tmuxrc .
+cp dotfiles/.tmux.conf .
+
 cp dotfiles/.zshrc-tmpl .zshrc
+cat dotfiles/linuxzshrc >> .zshrc
 
 #OHMYZSH
 sudo apt install zsh -y
