@@ -11,9 +11,11 @@ sudo apt update
 sudo apt upgrade
 
 #UTILITIES
-sudo apt install bat
+sudo apt install bat -y
 mkdir -p ~/.local/bin
 ln -s /usr/bin/batcat ~/.local/bin/bat
+
+sudo apt install rlwrap -y
 
 #GITCONFIG
 git config --global user.email "ryan.is.gray@gmail.com"
