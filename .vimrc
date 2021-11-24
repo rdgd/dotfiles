@@ -34,12 +34,13 @@ Plug 'liquidz/vim-iced', {'for': 'clojure'}
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'TovarishFin/vim-solidity'
-
+Plug 'pangloss/vim-javascript'
+Plug 'jpalardy/vim-slime'
 call plug#end()
 
 let g:iced_enable_default_key_mappings = v:true
 let g:ale_linters = {'clojure': ['clj-kondo']}
-
+let g:slime_target = "tmux"
 let g:rbpt_colorpairs = [
     \ ['brown',       'RoyalBlue3'],
     \ ['Darkblue',    'SeaGreen3'],
