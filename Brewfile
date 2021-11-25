@@ -7,6 +7,7 @@ cask 'google-chrome'
 cask 'slack'
 cask 'spotify'
 cask '1password'
+cask 'discord'
 
 brew 'clojure/tools/clojure'
 brew 'saml2aws'
