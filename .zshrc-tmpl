@@ -15,8 +15,6 @@ plugins=(git web-search bazel terraform wd)
 # User configuration
 eval "$(saml2aws --completion-script-zsh)"
 
-[[ -s "/home/ryan/.gvm/scripts/gvm" ]] && source "/home/ryan/.gvm/scripts/gvm"
-
 set -o vi
 export EDITOR='vim'
 export GOPATH=~/go

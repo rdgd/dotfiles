@@ -1,6 +1,8 @@
 cask_args appdir: '/Applications'
 
 tap 'homebrew/homebrew-cask' || true
+tap 'homebrew/cask-versions' || true
+tap 'homebrew/cask' || true
 tap 'hashicorp/tap'
 
 cask 'google-chrome'
@@ -9,12 +11,12 @@ cask 'spotify'
 cask '1password'
 cask 'discord'
 
+brew 'java'
 brew 'clojure/tools/clojure'
 brew 'saml2aws'
 brew 'bat'
 brew 'rlwrap'
 brew 'awscli'
-brew 'hashicorp/tap/terraform'
+brew 'terraform'
 brew 'golang'
-brew 'avalanchego'
 brew 'kubectl'

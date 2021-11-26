@@ -54,7 +54,7 @@ aws eks --region us-east-2 update-kubeconfig --name k8s-prod-cluster
 
 #GO AND GVM
 curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer | bash
-[[ -s "/home/ryan/.gvm/scripts/gvm" ]] && source "/home/ryan/.gvm/scripts/gvm"
+[[ -s "/Users/ryan/.gvm/scripts/gvm" ]] && source "/Users/ryan/.gvm/scripts/gvm"
 export GOPATH=~/go
 gvm install go1.16.8
 gvm use go1.16.8
