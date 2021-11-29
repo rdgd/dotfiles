@@ -93,6 +93,13 @@ map <c-h> <c-w>h
 nnoremap j gj
 nnoremap k gk
 
+"function creates new checkbox
+function! Cb()
+   exec "normal I- [ ] \<Esc>"
+endfunction
+
+nmap <leader>cb :call Cb()<CR>
+
 "checklist plugin bindings
 nnoremap <leader>ct :ChecklistToggleCheckbox<cr>
 nnoremap <leader>ce :ChecklistEnableCheckbox<cr>
