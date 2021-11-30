@@ -9,6 +9,7 @@ cd ~
 
 #HOMEBREW
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+export PATH=$PATH:/opt/homebrew/bin
 brew tap Homebrew/bundle
 cp dotfiles/Brewfile .
 brew bundle

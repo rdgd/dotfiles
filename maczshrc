@@ -1,4 +1,7 @@
+export PATH=$PATH:/opt/homebrew/bin
 
 [[ -s "/Users/ryan/.gvm/scripts/gvm" ]] && source "/Users/ryan/.gvm/scripts/gvm"
 export ZSH="/Users/ryan/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
+
+
