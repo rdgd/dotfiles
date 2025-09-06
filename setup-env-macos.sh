@@ -15,7 +15,7 @@ cp dotfiles/Brewfile .
 brew bundle
 
 #OHMYZSH
-sudo apt install zsh -y
+brew install zsh -y
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 #DOTFILES
