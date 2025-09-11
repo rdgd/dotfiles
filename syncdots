@@ -4,6 +4,5 @@
 # - Only run this file from the dotfiles repo root - #
 ###                                                ###
 
-cp ~/.zshrc ./.zshrc-tmpl
-cp ~/.vimrc ./.vimrc
-cp ~/.tmux.conf ./.tmux.conf
+cp ~/.zshrc .
+cp ~/.tmux.conf . 

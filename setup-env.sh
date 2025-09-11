@@ -13,11 +13,13 @@ else
   )\"" >> "$HOME/.zshrc"
 fi
 
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 git clone git@github.com:rdgd/mise-config.git $HOME/.config/mise
 cd $HOME/.config/mise && mise install
 cd $HOME
 
-git clone git@github.com:rdgd/nvim-config.git
+git clone git@github.com:rdgd/neovim-config.git
 cd $HOME
 
 #GITCONFIG
@@ -30,9 +32,4 @@ cp $HOME/dotfiles/.vimrc .
 cp $HOME/dotfiles/.tmux.conf .
 cp $HOME/dotfiles/.zshrc .
 
-
-
-
-
-
-
+chsh -s $(which zsh)
