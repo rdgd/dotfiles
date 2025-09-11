@@ -1,7 +1,9 @@
 export PATH=~/.local/bin:$HOME/bin:/usr/local/bin:$PATH:~/.vim/plugged/vim-iced/bin
 
-# Path to your oh-my-zsh installation.
+autoload -Uz compinit
+compinit
 
+# Path to your oh-my-zsh installation.
 ZSH_THEME="lambda"
 
 HYPHEN_INSENSITIVE="true"
@@ -16,8 +18,9 @@ plugins=(git web-search bazel terraform wd)
 eval "$(saml2aws --completion-script-zsh)"
 
 set -o vi
-export EDITOR='vim'
-export GOPATH=~/go
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export EDITOR='nvim'
+
+export ZSH="$HOME/.oh-my-zsh"
+source $ZSH/oh-my-zsh.sh
+eval "$($HOME/.local/bin/mise activate zsh)"
+alias ls='eza --git --group-directories-first'
