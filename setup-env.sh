@@ -3,7 +3,6 @@
 cd $HOME 
 mkdir -p $HOME/.config/
 
-#MISE
 if type -p mise >/dev/null; then
   echo "Mise already installed... skipping"
 else
@@ -11,6 +10,13 @@ else
   curl https://mise.run | sh
   echo "eval \"\$($HOME/.local/bin/mise activate zsh│
   )\"" >> "$HOME/.zshrc"
+fi
+
+if type -p cursor-agent >/dev/null; then
+  echo "Cursor CLI already installed... skipping"
+else
+  "Installing Cursor CLI"
+  curl https://cursor.com/install -fsS | bash
 fi
 
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -28,7 +34,6 @@ git config --global user.name "rdgd"
 
 #DOTFILES
 git clone git@github.com:rdgd/dotfiles.git $HOME/dotfiles
-cp $HOME/dotfiles/.vimrc .
 cp $HOME/dotfiles/.tmux.conf .
 cp $HOME/dotfiles/.zshrc .
 
