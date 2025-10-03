@@ -1,4 +1,4 @@
-export PATH=/bin:/usr/bin:$HOME/.local/bin:$HOME/bin:/usr/local/bin:$HOME/scripts:$HOME/.local/share/nvim/lazy/vim-iced/bin:$PATH
+export PATH=$HOME/.ghcup/bin/bin:/usr/bin:$HOME/.local/bin:$HOME/bin:/usr/local/bin:$HOME/scripts:$HOME/.local/share/nvim/lazy/vim-iced/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 autoload -Uz compinit
@@ -20,5 +20,8 @@ export EDITOR='nvim'
 export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 eval "$($HOME/.local/bin/mise activate zsh)"
+# Ensure ghcup's GHC takes precedence over mise's GHC
+export PATH="$HOME/.ghcup/bin:$PATH"
 alias ls='eza --git --group-directories-first'
+alias bazel='bazelisk'
 eval "$(saml2aws --completion-script-zsh)"
