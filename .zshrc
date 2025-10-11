@@ -24,4 +24,23 @@ eval "$($HOME/.local/bin/mise activate zsh)"
 export PATH="$HOME/.ghcup/bin:$PATH"
 alias ls='eza --git --group-directories-first'
 alias bazel='bazelisk'
+alias tl='tmux ls'
+alias ta='tmux attach'
+alias tn='tmux new'
+alias ga='git add .'
+alias gs='git status'
+alias gc='git commit'
+alias gl='git log'
+alias gp='git push'
+alias gpm='git push origin master'
+alias gpl='git pull'
+alias n='nvim'
+alias v='nvim'    
+alias vim='nvim'
+alias sz="source $HOME/.zshrc"
+alias vnc="cd $HOME/.config/nvim/ && nvim"
+alias vz="nvim $HOME/.zshrc"
+alias cdm="cd $HOME/.config/mise"
+alias cdv="cd $HOME/.config/nvim"
+alias mi="mise install"
 eval "$(saml2aws --completion-script-zsh)"
