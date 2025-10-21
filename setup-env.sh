@@ -25,8 +25,7 @@ git clone git@github.com:rdgd/mise-config.git $HOME/.config/mise
 cd $HOME/.config/mise && mise install
 cd $HOME
 
-git clone git@github.com:rdgd/neovim-config.git
-cd $HOME
+git clone git@github.com:rdgd/neovim-config.git $HOME/.config/nvim/
 
 #GITCONFIG
 git config --global user.email "ryan.is.gray@gmail.com"
