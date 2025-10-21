@@ -25,6 +25,7 @@ export PATH="$HOME/.ghcup/bin:$PATH"
 alias ls='eza --git --group-directories-first'
 alias bazel='bazelisk'
 alias cl='clear'
+alias co='xclip -selection clipboard'
 alias tl='tmux ls'
 alias ta='tmux attach'
 alias tn='tmux new'
