@@ -22,6 +22,13 @@ source $ZSH/oh-my-zsh.sh
 eval "$($HOME/.local/bin/mise activate zsh)"
 # Ensure ghcup's GHC takes precedence over mise's GHC
 export PATH="$HOME/.ghcup/bin:$PATH"
+
+# Fixes scaling issues with ghostty launched from WSL
+# Unsure how this will interact with MacOS
+export GDK_SCALE=1
+export GDK_DPI_SCALE=1
+export XCURSOR_SIZE=24
+
 alias ls='eza --git --group-directories-first'
 alias bazel='bazelisk'
 alias cl='clear'
@@ -48,3 +55,5 @@ alias cdm="cd $HOME/.config/mise"
 alias cdv="cd $HOME/.config/nvim"
 alias mi="mise install"
 eval "$(saml2aws --completion-script-zsh)"
+export PULSE_SERVER=unix:/mnt/wslg/PulseServer
+export GAMES_HOME=/mnt/c/Users/ryani/Documents/game-dev/
