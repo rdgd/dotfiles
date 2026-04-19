@@ -57,3 +57,14 @@ alias mi="mise install"
 eval "$(saml2aws --completion-script-zsh)"
 export PULSE_SERVER=unix:/mnt/wslg/PulseServer
 export GAMES_HOME=/mnt/c/Users/ryani/Documents/game-dev/
+
+# Bootstrap tmuxp on first shell after install
+if ! command -v tmuxp >/dev/null 2>&1; then
+  if command -v pipx >/dev/null 2>&1; then
+    echo "tmuxp not found — installing via pipx..."
+    pipx install tmuxp
+  else
+    echo "tmuxp not found and pipx unavailable; skipping bootstrap"
+  fi
+fi
+alias tpd='tmuxp load dev'
