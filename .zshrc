@@ -67,4 +67,7 @@ if ! command -v tmuxp >/dev/null 2>&1; then
     echo "tmuxp not found and pipx unavailable; skipping bootstrap"
   fi
 fi
-alias tpd='tmuxp load dev'
+
+tnd() {
+  tmuxp load --yes dev
+}
