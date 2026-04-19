@@ -1,0 +1,36 @@
+session_name: dev
+windows:
+  - window_name: shell
+    start_directory: "~"
+    panes:
+      - null
+
+  - window_name: grow
+    start_directory: /mnt/c/Users/ryani/Documents/game-dev/projects/grow
+    layout: main-horizontal
+    options:
+      main-pane-height: 21
+    panes:
+      - nvim
+      - claude
+      - null
+
+  - window_name: regrow
+    start_directory: ~/projects/regrow
+    layout: main-horizontal
+    options:
+      main-pane-height: 20
+    panes:
+      - nvim
+      - claude
+      - null
+
+  - window_name: clover
+    start_directory: ~/projects/clover
+    layout: main-horizontal
+    options:
+      main-pane-height: 20
+    panes:
+      - nvim
+      - claude
+      - null
