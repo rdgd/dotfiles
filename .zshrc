@@ -68,6 +68,7 @@ if ! command -v tmuxp >/dev/null 2>&1; then
   fi
 fi
 
-tnd() {
-  tmuxp load --yes dev
+# Made into a function for support invoking at WSL startup time
+load-grow-tmux-session() {
+  tmuxp load --yes grow 
 }
