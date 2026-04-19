@@ -9,7 +9,7 @@ windows:
     start_directory: /mnt/c/Users/ryani/Documents/game-dev/projects/grow
     layout: main-horizontal
     options:
-      main-pane-height: 21
+      main-pane-height: 65%
     panes:
       - nvim
       - claude
@@ -19,7 +19,7 @@ windows:
     start_directory: ~/projects/regrow
     layout: main-horizontal
     options:
-      main-pane-height: 20
+      main-pane-height: 65%
     panes:
       - nvim
       - claude
@@ -29,7 +29,7 @@ windows:
     start_directory: ~/projects/clover
     layout: main-horizontal
     options:
-      main-pane-height: 20
+      main-pane-height: 65%
     panes:
       - nvim
       - claude
