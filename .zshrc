@@ -72,3 +72,7 @@ fi
 load-grow-tmux-session() {
   tmuxp load --yes grow 
 }
+
+load-dev-tmux-session() {
+  tmuxp load --yes dev 
+}
